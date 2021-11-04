@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <title>Electronics</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.svg" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div data-include="html/header.html"></div>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/logo.png" class="logo" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="login.html"
+                  >Mi Cuenta</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <aside id="message"></aside>
+
+    <main class="my-5 py-5 container">
+      <h2 class="mt-3">Agregar productos</h2>
+      <form id="agregar_productos">
+        <label class="mb-2">Nombre</label>
+        <input type="nombre" name="nombre" required class="form-control mb-4" />
+        <label class="mb-2">Descripcion</label>
+        <input
+          type="descripcion"
+          name="descripcion"
+          required
+          class="form-control mb-4"
+        />
+        <label class="mb-2">Precio</label>
+        <input type="precio" name="precio" required class="form-control mb-4" />
+        <label class="mb-2">Categoria</label>
+        <input
+          type="categoria"
+          name="categoria"
+          required
+          class="form-control mb-4"
+        />
+        <label class="">Agrega imagen</label>
+        <div id="file-preview"></div>
+        <div class="btn-add back-gris d-flex">
+          <svg
+            width="107"
+            height="95"
+            viewBox="0 0 107 95"
+            fill=""
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M40.0959 37.8627C44.1324 37.8627 47.4045 34.5905 47.4045 30.5541C47.4045 26.5177 44.1324 23.2455 40.0959 23.2455C36.0595 23.2455 32.7873 26.5177 32.7873 30.5541C32.7873 34.5905 36.0595 37.8627 40.0959 37.8627Z"
+              fill=""
+            />
+            <path
+              d="M100.088 57.4539C96.6362 54.2056 92.2713 52.0739 87.5004 51.4649V14.3127C87.5004 10.3539 85.8763 6.80108 83.3386 4.16185C80.6994 1.52263 77.1466 0 73.1877 0H14.3127C10.3539 0 6.80108 1.62414 4.16185 4.16185C1.52263 6.80108 0 10.3539 0 14.3127V61.1082V65.4731V74.9134C0 78.8722 1.62414 82.425 4.16185 85.0642C6.80108 87.7035 10.3539 89.2261 14.3127 89.2261H71.2591C75.0149 92.2713 79.6843 94.2 84.8612 94.2C90.8502 94.2 96.2302 91.7638 100.088 87.9065C103.945 84.0491 106.381 78.6692 106.381 72.6802C106.381 66.6912 103.945 61.3112 100.088 57.4539ZM5.37996 14.3127C5.37996 11.8765 6.39504 9.64332 8.01918 8.01918C9.64332 6.39504 11.8765 5.37996 14.3127 5.37996H73.1877C75.6239 5.37996 77.8571 6.39504 79.4813 8.01918C81.1054 9.64332 82.1205 11.8765 82.1205 14.3127V45.9834L67.0972 31.0616C66.0821 30.0466 64.3565 29.945 63.2399 31.0616L40.6035 53.7996L25.2756 38.3703C24.2606 37.3552 22.5349 37.2537 21.4183 38.3703L5.37996 54.6116V14.3127V14.3127ZM14.2112 83.9476V83.8461C11.775 83.8461 9.54181 82.831 7.91767 81.2069C6.39504 79.5828 5.37996 77.3496 5.37996 74.9134V65.4731V62.2248L23.4485 44.1563L38.7763 59.4841C39.7914 60.4991 41.517 60.4991 42.6336 59.4841L65.2701 36.7461L80.0903 51.6679C79.7858 51.7694 79.4813 51.8709 79.1767 51.9724C78.7707 52.0739 78.3647 52.1754 77.8571 52.3785C77.4511 52.48 77.045 52.683 76.639 52.7845C76.3345 52.886 76.1315 52.9875 75.8269 53.1905C75.4209 53.3935 75.1164 53.495 74.8119 53.6981C74.3043 54.0026 73.7968 54.3071 73.2892 54.6116C72.9847 54.8147 72.7817 54.9162 72.4772 55.1192C72.2741 55.2207 72.1726 55.3222 71.9696 55.4237C71.056 56.0328 70.244 56.7433 69.5334 57.5554C65.6761 61.4127 63.2399 66.7927 63.2399 72.7817C63.2399 74.3043 63.4429 75.7254 63.7474 77.2481C63.8489 77.6541 63.9504 77.9586 64.0519 78.3647C64.3565 79.3797 64.661 80.3948 65.067 81.4099V81.5114C65.4731 82.3235 65.8791 83.2371 66.3866 83.9476H14.2112V83.9476ZM96.1287 84.0491C93.1849 86.9929 89.2261 88.7185 84.7597 88.7185C80.4963 88.7185 76.5375 86.9929 73.6953 84.2522C73.2892 83.8461 72.8832 83.3386 72.4772 82.9325C72.1726 82.628 71.8681 82.222 71.5636 81.9175C71.1575 81.4099 70.853 80.8009 70.5485 80.1918C70.3455 79.7858 70.1425 79.4813 69.9394 79.0752C69.7364 78.5677 69.5334 77.9586 69.4319 77.3496C69.3304 76.9435 69.1274 76.436 69.0259 76.03C68.8229 75.0149 68.7213 73.8983 68.7213 72.7817C68.7213 68.3153 70.5485 64.3565 73.3907 61.4127C76.3345 58.469 80.2933 56.7433 84.7597 56.7433C89.2261 56.7433 93.1849 58.5705 96.1287 61.4127C99.0724 64.255 100.798 68.3153 100.798 72.7817C100.798 77.1466 98.9709 81.1054 96.1287 84.0491Z"
+              fill=""
+            />
+            <path
+              d="M93.5909 69.9395H87.3989V63.7475C87.3989 62.2248 86.1808 61.0067 84.6582 61.0067C83.1355 61.0067 81.9174 62.2248 81.9174 63.7475V69.9395H75.7254C74.2028 69.9395 72.9847 71.1576 72.9847 72.6802C72.9847 74.2028 74.2028 75.4209 75.7254 75.4209H81.9174V81.613C81.9174 83.1356 83.1355 84.3537 84.6582 84.3537C86.1808 84.3537 87.3989 83.1356 87.3989 81.613V75.4209H93.5909C95.1136 75.4209 96.3317 74.2028 96.3317 72.6802C96.3317 71.1576 95.1136 69.9395 93.5909 69.9395Z"
+              fill=""
+            />
+          </svg>
+        </div>
+        <input type="file" id="uploader" name="uploader" class="d-none" />
+        <div class="uploader d-none">
+          <progress id="progress-bar" value="0" max="100"></progress>
+          <span id="progress-advance"></span>
+        </div>
+
+        <input type="submit" value="Agregar" class="boton-2" />
+      </form>
+    </main>
+
+    <script src="js/index.js" type="module"></script>
+
+    <footer class="footer bg-dark mt-auto py-3 text-white">
+      <div class="container-fluid row">
+        <p>Ttes:</p>
+        <div class="col-6">
+          <p>
+            <i class="material-icons">location_on</i> Guadalupe Sanchez Barrera
+          </p>
+        </div>
+        <div class="col-6">
+          <p><i class="material-icons">location_on</i> Norma A. Hdez. Cruz</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

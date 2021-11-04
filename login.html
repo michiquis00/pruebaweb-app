@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Iniciar sesión • Discentes MSI</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/favicon.png" />
+  </head>
+  <body>
+    <div data-include="html/header.html"></div>
+    <main class="login full-screen-center">
+      <article class="box">
+        <div class="logo text-center">
+          <h1>Discentes MSI</h1>
+        </div>
+        <form id="login" class="login-form mt-3">
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input
+            type="password"
+            name="pass"
+            placeholder="Contraseña"
+            required
+          />
+          <input class="btn-primary" type="submit" value="Iniciar sesión" />
+        </form>
+        <div class="o">
+          <span>o</span>
+        </div>
+        <div class="login-social text-center">
+          <button id="login-google" class="login-google">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 12C6 15.3137 8.68629 18 12 18C14.6124 18 16.8349 16.3304 17.6586 14H12V10H21.8047V14H21.8C20.8734 18.5645 16.8379 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C15.445 2 18.4831 3.742 20.2815 6.39318L17.0039 8.68815C15.9296 7.06812 14.0895 6 12 6C8.68629 6 6 8.68629 6 12Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>Iniciar sesión con Google</span>
+          </button>
+          <a class="small-text" href="password.html"
+            >¿Has olvidado tu contraseña?</a
+          >
+        </div>
+        <div id="message"></div>
+      </article>
+      <aside class="box text-center">
+        <p class="small-text">
+          ¿No tienes una cuenta?
+          <a class="text-primary" href="signin.html">Regístrate</a>
+        </p>
+      </aside>
+    </main>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
